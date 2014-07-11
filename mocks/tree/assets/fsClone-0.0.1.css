@@ -249,7 +249,8 @@
 }
 
 body {
-  font-weight: 500;
+  font: 14px/1.4 Helvetica,Arial,sans-serif;
+font-weight: 300;
 }
 
 .lead {
