@@ -3077,19 +3077,19 @@ body.familysearch_theme {
 .familysearch_theme a,
 .familysearch_theme a:hover,
 .familysearch_theme a:active {
-  color: #0051c4;
+  color: #02b1f2;
 }
 
 .familysearch_theme .mainContent {
   padding: 20px;
-  background: #ECEBEA;
+  background: #f9f9f9;
   border-top: 1px solid #fff;
 }
 
 .familysearch_theme .profileHeaderContainer .jumbotron {
   position: relative;
   color: #333331;
-  background: #cdcdcd no-repeat;
+  background: #eee no-repeat;
   border-bottom: 1px solid #B7B7B7;
 }
 
