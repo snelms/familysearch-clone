@@ -17,6 +17,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-express');
+    grunt.loadNpmTasks('grunt-watchify');
 
     /** ********************************************************************************* */
     /** **************************** File Config **************************************** */
