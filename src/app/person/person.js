@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module('fsClone')
+  angular.module('fsReferenceClient')
     .config(function ($stateProvider) {
       $stateProvider.state('person', {
         url: '/person/:personId',
@@ -14,7 +14,7 @@
             });
           }],
           sources: ['_','$q','$stateParams','fsApi',function(_, $q, $stateParams, fsApi) {
-            return fsApi.getPersonSourceRefs($stateParams.personId).then(function(response) {
+            return fsApi.getPersonSourcesQuery($stateParams.personId).then(function(response) {
               return _.map(response.getSourceRefs(), function(sourceRef) {
                 return {
                   ref: sourceRef,

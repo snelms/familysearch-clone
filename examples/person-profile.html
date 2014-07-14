@@ -8,7 +8,7 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <!-- compiled CSS -->
-  <link rel="stylesheet" type="text/css" href="../build/assets/fsClone-0.0.1.css" />
+  <link rel="stylesheet" type="text/css" href="../build/assets/fsReferenceClient-0.0.1.css" />
   <link href="../build/assets/tree.css" rel="stylesheet">
   <!-- Latest compiled and minified jQuery -- before we load any of our own scripts, angular in particular -->
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -25,8 +25,8 @@
   <script type="text/javascript" src="../build/vendor/angular-pan-zoom/build/panzoom.0.1-snapshot.min.js"></script>
   <script type="text/javascript" src="../build/vendor/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
   <script type="text/javascript" src="../build/vendor/angular-growl-v2/build/angular-growl.js"></script>
-  <!-- fsClone shared files -->
-  <script type="text/javascript" src="../build/dist/fsclone-all-0.0.1.js"></script>
+  <!-- fsReferenceClient shared files -->
+  <script type="text/javascript" src="../bin/fsreferenceclient-common-0.0.1.js"></script>
 </head>
 <!-- top-level ng-app tag tells angularjs to initialize -->
 <body ng-app="MyApp">
@@ -49,13 +49,13 @@
   };
 
   // angular boilerplate
-  angular.module('MyApp', ['fsCloneShared', 'templates-common'])
+  angular.module('MyApp', ['fsReferenceClientShared', 'templates-common'])
     // configure FamilySearch global object
     .config(function (fsApiProvider) {
       fsApiProvider
-        .setAppKey('WCQY-7J1Q-GKVV-7DNM-SQ5M-9Q5H-JX3H-CMJK')
+        .setClientId('WCQY-7J1Q-GKVV-7DNM-SQ5M-9Q5H-JX3H-CMJK')
         .setEnvironmentName('sandbox')
-        .setAuthCallback('http://localhost:9000/#!/auth');
+        .setRedirectUri('http://localhost:9000/#!/auth');
     })
     // force FamilySearch (fsApi) to initialize
     .run(function (fsApi) {
@@ -86,7 +86,7 @@
 <div ng-controller="SampleController">
   <!-- here is the fs-person-profile component; person is set by the "$scope.person = person" statement above -->
   <div fs-person-profile ng-show="ready" person="person"></div>
-  <!-- to see examples of more components, look at the code in src/app, which uses components from src/common/fsCloneShared -->
+  <!-- to see examples of more components, look at the code in src/app, which uses components from src/common/fsReferenceClientShared -->
 </div>
 
 </body>

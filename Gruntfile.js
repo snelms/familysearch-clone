@@ -37,7 +37,7 @@ module.exports = function(grunt) {
          */
         app_files: {
             js: [
-              'src/common/fsCloneShared/fsCloneShared.js',
+              'src/common/fsReferenceClientShared/fsReferenceClientShared.js',
               'src/app/app.js',
               'src/**/*.js',
               '!src/**/*.spec.js',
@@ -220,7 +220,7 @@ module.exports = function(grunt) {
                 src: [
                     '<%= vendor_files.js %>',
                     'module.prefix',
-                    '<%= build_dir %>/src/common/fsCloneShared/fsCloneShared.js',
+                    '<%= build_dir %>/src/common/fsReferenceClientShared/fsReferenceClientShared.js',
                     '<%= build_dir %>/src/app/app.js',
                     '<%= build_dir %>/src/**/*.js',
                     '<%= html2js.app.dest %>',
@@ -231,11 +231,11 @@ module.exports = function(grunt) {
             },
             dist_js: {
                 src: [
-                    '<%= build_dir %>/src/common/fsCloneShared/fsCloneShared.js',
+                    '<%= build_dir %>/src/common/fsReferenceClientShared/fsReferenceClientShared.js',
                     '<%= build_dir %>/src/common/**/*.js',
                     '<%= build_dir %>/templates-common.js'
                 ],
-                dest: '<%= compile_dir %>/fsclone-common-<%= pkg.version %>.js'
+                dest: '<%= compile_dir %>/fsreferenceclient-common-<%= pkg.version %>.js'
             }
 
         },
@@ -414,7 +414,7 @@ module.exports = function(grunt) {
                 dir: '<%= build_dir %>',
                 src: [
                     '<%= vendor_files.js %>',
-                    '<%= build_dir %>/src/common/fsCloneShared/fsCloneShared.js',
+                    '<%= build_dir %>/src/common/fsReferenceClientShared/fsReferenceClientShared.js',
                     '<%= build_dir %>/src/app/app.js',
                     '<%= build_dir %>/src/**/*.js',
                     '<%= html2js.common.dest %>',
@@ -639,7 +639,8 @@ module.exports = function(grunt) {
 
     // The 'compile' task gets your app ready for deployment by concatenating and minifying your code.
     grunt.registerTask('compile', [
-      'recess:compile', 'copy:compile_assets', 'ngmin', 'uglify', 'concat:compile_js', 'concat:dist_js', 'index:compile'
+//      'recess:compile', 'copy:compile_assets', 'ngmin', 'uglify', 'concat:compile_js', 'concat:dist_js', 'index:compile'
+      'recess:compile', 'copy:compile_assets', 'concat:compile_js', 'concat:dist_js', 'index:compile'
 //      'recess:compile', 'copy:compile_assets', 'concat:compile_js', 'concat:dist_js', 'index:compile'
 //      'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'concat:dist_js', 'uglify', 'index:compile'
     ]);

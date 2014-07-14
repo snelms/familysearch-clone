@@ -12,9 +12,9 @@ module.exports = function ( karma ) {
         <% scripts.forEach( function ( file ) { %>'<%= file %>',
             <% }); %>
         /**
-         * fsCloneShared module must be defined before referenced
+         * fsReferenceClientShared module must be defined before referenced
          */
-        'src/common/fsCloneShared/fsCloneShared.js',
+        'src/common/fsReferenceClientShared/fsReferenceClientShared.js',
         'src/app/app.js',
         'src/**/*.js',
         'src/**/*.coffee'
